@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 
-# Define possible values for each feature
+
 event_types = ["Conference", "Trade Show", "Festival", "Concert", "Workshop", "Webinar", "Seminar"]
 event_sizes = range(100, 10000)  # Random number of attendees
 event_durations = range(1, 5)  # Random event duration in days
