@@ -1,9 +1,9 @@
-import 'hero.css';
+import './hero.css'
 
 function Hero() {
   return (
-    <div>
-      
+    <div >
+     its here hero 
     </div>
   )
 }
