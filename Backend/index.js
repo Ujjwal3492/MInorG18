@@ -1,19 +1,24 @@
 import express from 'express';
 import dotenv from 'dotenv'
 import ConnectDB from './config/db.js';
-import routesmain from './Routes'
+import organizerRoutes from './Routes/Organizers_routes.js'
+
 
 
 //dotenv configs 
 dotenv.config();
 const app = express();
+//json definition
+
+app.use(express.json());
+
+app.use('/api/organizers', organizerRoutes);
 
 //mongo config
 ConnectDB();
 
 
 //setting up of the routes 
-app.use('/api/organizer',)
 
 app.get('/',(req,res)=>{
     try{
