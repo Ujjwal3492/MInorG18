@@ -2,6 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv'
 import ConnectDB from './config/db.js';
 import organizerRoutes from './Routes/Organizers_routes.js'
+import participantRoutes from './Routes/participant.js'
+import eventRoutes from './Routes/event_routes.js'
+import cors from 'cors';
+
+
 
 
 
@@ -11,9 +16,11 @@ const app = express();
 //json definition
 
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/organizers', organizerRoutes);
-
+app.use('/api',participantRoutes);
+app.use('/api/event',eventRoutes);
 //mongo config
 ConnectDB();
 
