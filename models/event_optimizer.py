@@ -34,7 +34,6 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 print(f'Mean Absolute Error: {mae:.2f}')
-
 # Example new event data
 new_event_data = pd.DataFrame({
     'Event Size (Attendees)': [1000],
@@ -44,3 +43,7 @@ new_event_data = pd.DataFrame({
 
 new_event_overlap = model.predict(new_event_data)
 print(f'Predicted Event Overlap: {new_event_overlap[0]:.2f}')
+if new_event_overlap>.60:
+    print("The events are overlapping strongly, change the time frame or date.")
+else:
+    print("No overlapping between the events.")
