@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Form | Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #505050;
+            --accent-color: #8b5cf6;
+            --bg-light: #f5f3ff;
+            --text-dark: #4b5057;
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .form-container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.1),
+                0 10px 20px -5px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            position: relative;
+        }
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        .form-title {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            text-align: center;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .input-field {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .input-field input, 
+        .input-field textarea {
+            border-radius: 12px;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #e5e7eb;
+            width: 100%;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9fafb;
+        }
+        .input-field input:focus, 
+        .input-field textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+            outline: none;
+        }
+        .input-field label {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        .btn-submit {
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        .btn-submit:hover::before {
+            left: 0;
+        }
+        .nav-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .nav-menu a {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .nav-menu a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-container">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="logo">
+                <a href="#" class="text-2xl font-bold text-gray-800">Eventzzz</a>
+            </div>
+            <div class="nav-menu">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-home mr-2"></i>Home</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-globe mr-2"></i>Features</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-phone mr-2"></i>Contact</a></li>
+                    <li><a href="#" class="text-gray-700 hover:text-indigo-600"><i class="fas fa-heart mr-2"></i>Rate Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-24 flex-grow flex items-center justify-center">
+        <div class="form-container w-full max-w-2xl p-8 md:p-12">
+            <h2 class="form-title mb-8">Create Your Event</h2>
+            <form id="eventForm" action="#" method="POST">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="input-field">
+                        <label for="eventName">Event Name</label>
+                        <input type="text" id="eventName" name="eventName" placeholder="Tech Conference 2024" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="organizerName">Organizer Name</label>
+                        <input type="text" id="organizerName" name="organizerName" placeholder="John Doe" required>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="eventDesc">Event Description</label>
+                    <textarea id="eventDesc" name="eventDesc" rows="4" placeholder="Describe your amazing event..." required></textarea>
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="input-field">
+                        <label for="eventDate">Event Date</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                    </div>
+                    <div class="input-field">
+                        <label for="eventLocation">Event Location</label>
+                        <input type="text" id="eventLocation" name="eventLocation" placeholder="San Francisco, CA" required>
+                    </div>
+                </div>
+                <div class="input-field">
+                    <label for="organizerEmail">Organizer Email</label>
+                    <input type="email" id="organizerEmail" name="organizerEmail" placeholder="john@example.com" required>
+                </div>
+                <div class="input-field">
+                    <label for="eventThumbnail">Event Thumbnail</label>
+                    <input type="file" id="eventThumbnail" name="eventThumbnail" accept="image/*" required>
+                </div>
+                <button type="submit" class="btn-submit mt-6">Create Event</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

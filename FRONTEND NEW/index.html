@@ -32,18 +32,20 @@
             <div class="hero-content">
                 <h1>GET THE MOST OUT OF EVENTS!</h1>
                 <p>Welcome to Eventz. We help you to events in the best way possible.</p>
+                <video autoplay loop muted class="video-background">
+                    <source src="assets/fallingStar.mp4" type="video/mp4">
             </div>
         </section>
 
         <section class="features">
-            <div class="features-container">
-                <div class="feature-card">
+            <div class="features-container ">
+               <a href="afterOrganise/index.html" class="feature-card-link"> <div class="feature-card">
                     <div class="icon-container red">
                         <i class="fas fa-hands-helping"></i>
                     </div>
                     <h6>ORGANISE EVENTS</h6>
                     <p>Organise and host events, get everything planned.</p>
-                </div>
+                </div> </a>
                 <div class="feature-card">
                     <div class="icon-container blue">
                         <i class="fas fa-sitemap"></i>
@@ -132,8 +134,8 @@
 
         <section class="contact">
             <div class="contact-form">
-                <h4>Want to work with us?</h4>
-                <p>Complete this form and we will get back to you in 24 hours.</p>
+                <h4 id="want-to-work">Feedback?</h4>
+                <p></p>
                 <form>
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -145,25 +147,90 @@
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" placeholder="Type a message..."></textarea>
+                        <textarea id="message" placeholder="Write Feedback here..."></textarea>
                     </div>
                     <button type="submit">Send Message</button>
                 </form>
             </div>
         </section>
 
-        <footer>
-            <div class="footer-content">
-                <div class="footer-social">
-                    <h4>Connect with us and Collaborate</h4>
-                    <div class="social-icons">
-                        <button><i class="fab fa-twitter"></i></button>
-                        <button><i class="fab fa-facebook-square"></i></button>
-                        <button><i class="fab fa-dribbble"></i></button>
-                        <button><i class="fab fa-github"></i></button>
+        <div class="feedback-section">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="feedback-container">
+                <!-- Feedback 1 -->
+                <div class="feedback-card">
+                    <div class="feedback-avatar">
+                        <img src="https://t3.ftcdn.net/jpg/06/78/09/78/240_F_678097871_G7OpoHQmiZTj4bHB7YW2HoH1syWfCbB9.jpg" alt="Client 1">
+                    </div>
+                    <div class="feedback-details">
+                        <h3 class="client-name">John Doe</h3>
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                        <p class="feedback-text">"This event was an incredible experience! I learned so much and had a great time networking with professionals in the tech industry. Highly recommend!"</p>
+                    </div>
+                </div>
+                <!-- Feedback 2 -->
+                <div class="feedback-card">
+                    <div class="feedback-avatar">
+                        <img src="https://media.gettyimages.com/id/1473893794/photo/smiling-businessman-gesturing-against-blue-background.jpg?s=612x612&w=0&k=20&c=ZUGNVKDAJRgmu8TCmz9x8jcL7ABn_rsUdvykXe7CfQI=" alt="Client 2">
+                    </div>
+                    <div class="feedback-details">
+                        <h3 class="client-name">Jane Smith</h3>
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                        <p class="feedback-text">"A fantastic opportunity to connect with like-minded people! The speakers were engaging, and the workshops were extremely helpful."</p>
+                    </div>
+                </div>
+                <!-- Feedback 3 -->
+                <div class="feedback-card">
+                    <div class="feedback-avatar">
+                        <img src="https://t4.ftcdn.net/jpg/09/34/47/83/360_F_934478321_gWvHGFJSvmtuZT5HXohWObb75pIBgmoF.jpg" alt="Client 3">
+                    </div>
+                    <div class="feedback-details">
+                        <h3 class="client-name">Michael Lee</h3>
+                        <div class="rating">
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="star">&#9734;</span>
+                            <span class="star">&#9734;</span>
+                        </div>
+                        <p class="feedback-text">"Great event, but could use more hands-on activities. Overall, I appreciated the networking and the opportunity to explore new ideas in tech!"</p>
                     </div>
                 </div>
             </div>
+        </div>
+        
+
+        <footer>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <button aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                    <button aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                    <button aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </button>
+                </div>
+            </div>
+            
         </footer>
     </main>
 </body>

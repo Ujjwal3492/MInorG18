@@ -1,0 +1,170 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 10;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .navbar .social-icons {
+    float: right;
+  }
+  
+  .navbar .social-icons a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .login-form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .login-card h6 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .social-login-buttons button {
+    width: 48%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 14px;
+    border: none;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .social-login-buttons button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+  }
+  
+  .remember-me label {
+    font-size: 12px;
+  }
+  
+  .form-actions {
+    text-align: center;
+  }
+  
+  .form-actions button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-actions button:hover {
+    background-color: #555;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  div .footer-links{
+    text-decoration: none;
+    color: black;
+  }
