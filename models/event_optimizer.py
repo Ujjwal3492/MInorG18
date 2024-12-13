@@ -3,17 +3,9 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 
-#loading the data
 data = pd.read_csv('event_data.csv')
 
-# # Check the columns of the DataFrame
-# print("Columns in DataFrame:", data.columns)
-
-# # Clean column names by removing leading/trailing spaces
-# data.columns = data.columns.str.strip()
-
-# Preprocess the data
-data = data.dropna()  # Handle missing values
+data = data.dropna()
 
 
 data['Event Type'] = pd.Categorical(data['Event Type']).codes
@@ -34,11 +26,12 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 mae = mean_absolute_error(y_test, y_pred)
 print(f'Mean Absolute Error: {mae:.2f}')
+
 # Example new event data
 new_event_data = pd.DataFrame({
     'Event Size (Attendees)': [1000],
     'Event Duration (Days)': [3],
-    'Event Type': [0]  # Assuming '0' corresponds to a specific event type
+    'Event Type': [0]
 })
 
 new_event_overlap = model.predict(new_event_data)
