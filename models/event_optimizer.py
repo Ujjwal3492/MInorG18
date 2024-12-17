@@ -3,7 +3,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error
 
-data = pd.read_csv('event_data.csv')
+data = pd.read_csv('event_detail.csv')
 
 data = data.dropna()
 
