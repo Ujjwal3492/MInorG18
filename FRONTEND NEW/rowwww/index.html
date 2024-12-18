@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listing</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #000000;
+            --secondary-color: #505050;
+            --accent-color: #8b5cf6;
+            --bg-light: #f5f3ff;
+            --text-dark: #4b5057;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-light) 0%, #e0e7ff 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        nav {
+            background: white;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        form .input-field {
+            margin-bottom: 15px;
+        }
+
+        form .input-field label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        form .input-field input,
+        form .input-field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form .input-field textarea {
+            resize: none;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: var(--accent-color);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #6a4bd8;
+        }
+
+        .events-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(33.333% - 20px);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-details {
+            padding: 15px;
+        }
+
+        .event-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .event-details p {
+            margin-bottom: 10px;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .event-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">Eventzzz</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Create Your Event</h2>
+            <form id="eventForm">
+                <div class="input-field">
+                    <label for="eventName">Event Name</label>
+                    <input type="text" id="eventName" name="eventName" required>
+                </div>
+                <div class="input-field">
+                    <label for="organizerName">Organizer Name</label>
+                    <input type="text" id="organizerName" name="organizerName" required>
+                </div>
+                <div class="input-field">
+                    <label for="eventDesc">Event Description</label>
+                    <textarea id="eventDesc" name="eventDesc" rows="4" required></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="eventDate">Event Date</label>
+                    <input type="date" id="eventDate" name="eventDate" required>
+                </div>
+                <div class="input-field">
+                    <label for="eventLocation">Event Location</label>
+                    <input type="text" id="eventLocation" name="eventLocation" required>
+                </div>
+                <div class="input-field">
+                    <label for="eventThumbnail">Event Thumbnail</label>
+                    <input type="file" id="eventThumbnail" name="eventThumbnail" accept="image/*">
+                </div>
+                <button type="submit" class="btn-submit">Create Event</button>
+            </form>
+        </div>
+
+        <section>
+            <h2>Upcoming Events</h2>
+            <div class="events-container">
+                <!-- Event cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function saveEvent(event) {
+            const events = JSON.parse(localStorage.getItem('events')) || [];
+            events.push(event);
+            localStorage.setItem('events', JSON.stringify(events));
+        }
+    
+        function loadEvents() {
+            const events = JSON.parse(localStorage.getItem('events')) || [];
+            const eventsContainer = document.querySelector('.events-container');
+            eventsContainer.innerHTML = '';
+    
+            events.forEach(event => {
+                const card = document.createElement('div');
+                card.className = 'event-card';
+                card.innerHTML = `
+                    <img src="${event.thumbnail || 'https://via.placeholder.com/300x200'}" alt="${event.name}">
+                    <div class="event-details">
+                        <h3>${event.name}</h3>
+                        <p>${event.description}</p>
+                        <div class="event-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>${new Date(event.date).toDateString()}</span>
+                        </div>
+                    </div>
+                `;
+                eventsContainer.appendChild(card);
+            });
+        }
+    
+        document.getElementById('eventForm').addEventListener('submit', e => {
+            e.preventDefault();
+    
+            const event = {
+                name: document.getElementById('eventName').value,
+                organizer: document.getElementById('organizerName').value,
+                description: document.getElementById('eventDesc').value,
+                date: document.getElementById('eventDate').value,
+                location: document.getElementById('eventLocation').value,
+                thumbnail: document.getElementById('eventThumbnail').files[0] ? URL.createObjectURL(document.getElementById('eventThumbnail').files[0]) : ''
+            };
+    
+            saveEvent(event);
+            loadEvents();
+    
+            e.target.reset();
+        });
+    
+        document.addEventListener('DOMContentLoaded', loadEvents);
+    </script>
+    </body>
+    </html>
+    
