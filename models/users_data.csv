@@ -1,0 +1,51 @@
+user_id,interests,attended_events
+1,"tech, travel",[]
+2,art,"[95, 78, 43, 18]"
+3,"sports, travel","[100, 89, 58, 21, 50]"
+4,"gaming, food","[58, 4, 64, 72]"
+5,"sports, travel",[]
+6,"travel, art, coding","[73, 40, 50, 7]"
+7,"travel, coding, sports",[]
+8,coding,"[56, 74, 64, 49]"
+9,"gaming, food, travel","[61, 89, 46, 74, 37]"
+10,art,[10]
+11,"music, coding, art",[]
+12,travel,"[82, 80, 50, 4, 24]"
+13,art,"[24, 11, 47]"
+14,"coding, sports, art","[71, 36, 26]"
+15,travel,[]
+16,gaming,[]
+17,"music, coding, gaming","[62, 58]"
+18,"music, sports",[]
+19,"art, sports",[71]
+20,art,[39]
+21,"music, art, food","[7, 62, 80]"
+22,"music, art, travel","[21, 54, 11, 42, 18]"
+23,tech,[]
+24,"food, tech, sports","[34, 61, 29]"
+25,music,[]
+26,gaming,"[4, 23, 72, 59]"
+27,"art, travel, gaming","[83, 92, 82]"
+28,"coding, tech, travel",[]
+29,tech,"[41, 45]"
+30,"food, sports","[50, 73, 33, 21]"
+31,coding,"[27, 53]"
+32,"coding, music, tech","[14, 18, 33, 2]"
+33,"travel, tech, art","[24, 35]"
+34,"tech, gaming","[6, 84, 5, 35, 20]"
+35,sports,"[59, 65, 99, 20, 17]"
+36,coding,"[6, 13, 53, 44]"
+37,"tech, travel",[]
+38,"travel, art",[]
+39,"tech, music",[53]
+40,"gaming, coding",[]
+41,"tech, sports","[85, 77]"
+42,coding,"[43, 64, 34]"
+43,sports,[79]
+44,"tech, coding","[38, 24, 64, 53]"
+45,"music, sports, coding","[47, 93, 12, 23]"
+46,"travel, food","[89, 79, 53, 77, 9]"
+47,"music, sports, art","[66, 69, 81, 32, 20]"
+48,"tech, food","[7, 16, 92]"
+49,music,"[61, 63, 30, 41]"
+50,sports,"[36, 23, 91, 33, 59]"
