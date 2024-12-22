@@ -5,8 +5,8 @@ file_path = "feedback_data.xlsx"
 data = pd.read_excel(file_path)
 
 client = MongoClient("mongodb://localhost:27017")
-db = client["feedback_db"]
-collection = db["feedback"]
+db = client["Minor"]
+collection = db["FeedBack"]
 
 data_dict = data.to_dict(orient="records")
 
