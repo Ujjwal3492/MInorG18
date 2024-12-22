@@ -39,7 +39,7 @@ events_df = generate_event_data(num_events)
 users_df = generate_user_data(num_users, num_events)
 
 # Save to CSV files
-events_file = "events_data.csv"
+events_file = "rec_events_data.csv"
 users_file = "users_data.csv"
 
 events_df.to_csv(events_file, index=False)

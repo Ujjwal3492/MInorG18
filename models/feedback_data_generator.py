@@ -24,9 +24,15 @@ general_templates = [
 
 # Function to generate feedback
 def generate_feedback(feedback_id):
-    rating = random.choice([1, 2, 3, 4, 5])  # Random rating between 1 and 5
+    # Generate random name and email
+    name = fake.name()
+    email = fake.email()
+    
+    # Random rating between 1 and 5
+    rating = random.choice([1, 2, 3, 4, 5])  
+    
     feedback_type = random.choice(["suggestion", "general"])
-
+    
     if feedback_type == "suggestion":
         # Select a random suggestion template and insert a random aspect/feature
         template = random.choice(suggestion_templates)
@@ -34,7 +40,7 @@ def generate_feedback(feedback_id):
         feature = random.choice(["faster delivery", "more sizes", "better support", "more payment options"])
         action = random.choice(["adding more features", "reducing processing time", "improving support"])
         options = random.choice(["payment options", "delivery options", "size options"])
-        feedback_text = template.format(aspect=aspect, feature=feature, action=action, options=options)  # Ensure all placeholders are filled
+        feedback_text = template.format(aspect=aspect, feature=feature, action=action, options=options)
     else:
         # Select a general feedback template and insert a random feature/improvement
         template = random.choice(general_templates)
@@ -44,28 +50,29 @@ def generate_feedback(feedback_id):
         service = random.choice(["product", "service", "platform"])
         performance = random.choice(["quality", "design", "speed", "features"])
         feedback_text = template.format(feature=feature, improvement=improvement, suggestion=suggestion, service=service, performance=performance)
-
+    
     return {
         "feedback_id": feedback_id,
+        "name": name,
+        "email": email,
         "text": feedback_text,
         "rating": rating
     }
 
 # Generate a large amount of data
-def generate_data(num_samples=10000):
+def generate_data(num_samples):
     data = []
     for i in range(1, num_samples + 1):
         feedback = generate_feedback(f"FB{str(i).zfill(4)}")
         data.append(feedback)
     return data
 
-# Generate 1000 samples of feedback
-sample_data = generate_data(10000)
+# Generate 100,000 samples of feedback
+sample_data = generate_data(100000)
 
 # Convert to DataFrame
 df = pd.DataFrame(sample_data)
 
-# Save the data to Excel
-df.to_excel("feedback_data.xlsx", index=False)
-
-print("Sample feedback data generated and saved to 'feedback_data.xlsx'")
+# Save the data to CSV
+df.to_csv("feedback_data.csv", index=False)
+print("Sample feedback data generated and saved to 'feedback_data.csv'")

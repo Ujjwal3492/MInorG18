@@ -2,10 +2,10 @@ import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-users_data = pd.read_csv('models\\users_data.csv')
+users_data = pd.read_csv('users_data.csv')
 users_df = pd.DataFrame(users_data)
 
-events_data = pd.read_csv('models\\events_data.csv')
+events_data = pd.read_csv('rec_events_data.csv')
 events_df = pd.DataFrame(events_data)
 
 def recommend_events(user_id, users_df, events_df):
