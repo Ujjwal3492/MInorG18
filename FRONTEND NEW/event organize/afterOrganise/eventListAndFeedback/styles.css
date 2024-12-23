@@ -1,0 +1,289 @@
+:root {
+    --primary-color: #333;
+    --white: #fff;
+    --gray: #f4f4f4;
+    --red: #f44336;
+    --blue: #2196F3;
+    --green: #4CAF50;
+        --footer-bg: #f8f9fa; /* Soft grey background */
+        --footer-text: #4a4a4a; /* Darker grey for text */
+        --footer-border: #e0e0e0; /* Light grey border for buttons */
+        --footer-hover: #6c63ff; /* Accent color for hover effects */
+        --features-bg: #f8f9fa; /* Light grey background */
+        --card-bg: #ffffff; /* White card background */
+        --icon-bg: #6c63ff; /* Primary color for icons */
+        --text-color: #4a4a4a; /* Grey text color */
+        --shadow: rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        --hover-shadow: rgba(108, 99, 255, 0.3); /* Accent shadow for hover */
+        --primary-color: #333;
+        --white: #fff;
+        --accent-color: #6c63ff; /* Accent color for buttons and highlights */
+        --nav-bg: rgba(0, 0, 0, 0.7); /* Transparent black for navigation */
+        --hover-color: #fff; /* Hover effect for links */
+        --font-main: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-main), Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    position: fixed; /* Fixed navigation for a smooth, always-visible nav */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: var(--nav-bg);
+    padding: 1.5rem 2rem; /* Adjust padding for more space */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow under the navbar */
+    transition: background-color 0.3s ease; /* Smooth transition for background change */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+}
+
+.logo a:hover {
+    color: var(--accent-color); /* Accent color on hover */
+}
+
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    margin-left: 1.5rem;
+}
+
+.nav-menu ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.nav-menu ul li a:hover {
+    color: var(--accent-color); /* Accent color on hover */
+    transform: translateY(-2px); /* Smooth hover animation */
+}
+
+.events {
+    padding: 2rem;
+    background-color: var(--gray);
+    text-align: center;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    box-shadow: 0 2px 6px var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px var(--hover-shadow);
+}
+
+.event-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-details {
+    padding: rem;
+}
+
+.event-details h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.event-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+    height: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event-date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.event-card button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-card button:hover {
+    background-color: #4a47e0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #554bd8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+footer {
+    background-color: var(--footer-bg);
+    padding: 3rem 0; /* Increased padding for a spacious layout */
+    text-align: center;
+    border-top: 1px solid var(--footer-border); /* Subtle border at the top */
+    color: var(--footer-text);
+    font-size: 1rem;
+}
+
+.footer-social h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    color: var(--footer-text);
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Use gap for consistent spacing */
+}
+
+.social-icons button {
+    background-color: var(--footer-bg);
+    border: 2px solid var(--footer-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem; /* Icon size */
+    color: var(--footer-text);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+.social-icons button:hover {
+    background-color: var(--footer-hover);
+    color: #fff;
+    border-color: var(--footer-hover);
+    transform: translateY(-5px); /* Adds a slight lift effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for hover */
+}
+
+footer p {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #6c757d; /* Subtle grey text for the footer note */
+}
+
+@media (max-width: 768px) {
+
+    .features-container,
+    .events-container,
+    .about-content {
+        flex-direction: column;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-menu.active {
+        display: block;
+    }
+}
+.space{
+    margin-top: 100px;
+}
